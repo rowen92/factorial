@@ -3,6 +3,7 @@
  * Calc module
  * @module app/calc
  */
+
 /**
  * Check whether the natural number
  * @constructor
@@ -12,6 +13,7 @@
 function isNaturalNumber(n) {
   return ((n > 0) && (n % 1 === 0));
 };
+
 /**
  * The calculation of the factorial, recursive way
  * @constructor
@@ -29,14 +31,16 @@ var calcRecursiveFactorial = function func(n) {
  * @return {int} Result of factorial
 */
 function calcIterativeFactorial(n) {
-  var i = 2;
-  var fact = 1;
-  while (i <= n) {
-    fact = fact * i;
-    i++;
-  };
+  if (isNaturalNumber(n) == true) {
+    var i = 2;
+    var fact = 1;
+    while (i <= n) {
+      fact = fact * i;
+      i++;
+    };
 
-  return fact;
+    return fact;
+  };
 };
 
 module.exports.calcRecursiveFactorial = calcRecursiveFactorial;
