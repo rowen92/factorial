@@ -3,6 +3,13 @@ var calc = require('../app/calc.js');
 
 describe('factorial', function () {
 
+  describe('check of number', function () {
+    it('should be natural number', function () {
+      var result = calc.isNaturalNumber(10);
+      expect(result).to.be.true;
+    });
+  });
+
   describe('recursive way', function () {
     it('should be calculated, when number more than 1', function () {
       var result = calc.calcRecursiveFactorial(5);
