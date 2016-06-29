@@ -6,43 +6,44 @@
 
 /**
  * Check whether the natural number
- * @constructor
  * @param {int} n - Number
  * @return {boolean} Result of checking
-*/
+ */
 function isNaturalNumber(n) {
   return ((n > 0) && (n % 1 === 0));
 };
 
 /**
  * The calculation of the factorial, recursive way
- * @constructor
  * @param {int} n - Naturale number
  * @return {int} Result of factorial
-*/
-var calcRecursiveFactorial = function func(n) {
-  if (isNaturalNumber(n) == true) return (n == 1) ? 1 : n * func(n - 1);
+ */
+exports.calcRecursiveFactorial = function func(n) {
+  if (isNaturalNumber(n) === true) {
+    return (n == 1) ? 1 : n * func(n - 1);
+  } else {
+    console.log('Number should be natural');
+    return undefined;
+  };
 };
 
 /**
  * The calculation of the factorial, iterative way
- * @constructor
  * @param {int} n - Naturale number
  * @return {int} Result of factorial
-*/
-function calcIterativeFactorial(n) {
-  if (isNaturalNumber(n) == true) {
+ */
+exports.calcIterativeFactorial = function (n) {
+  if (isNaturalNumber(n) === true) {
     var i = 2;
     var fact = 1;
     while (i <= n) {
-      fact = fact * i;
+      fact *= i;
       i++;
     };
 
     return fact;
+  } else {
+    console.log('Number should be natural');
+    return undefined;
   };
 };
-
-module.exports.calcRecursiveFactorial = calcRecursiveFactorial;
-module.exports.calcIterativeFactorial = calcIterativeFactorial;
-module.exports.isNaturalNumber = isNaturalNumber;
